@@ -3,8 +3,8 @@
 ***Clone the sources***
 
 ```bash
-$ git clone TODO
-$ cd TODO
+$ git clone https://github.com/MohammadrezaJavid/DRF-album-API.git
+$ cd DRF-album-API
 ```
 
 ***Create a virtual environment***
