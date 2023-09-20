@@ -1,0 +1,6 @@
+env
+note.txt
+.idea
+.pytest_cache
+*.jpg
+*.JPG
