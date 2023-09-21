@@ -18,11 +18,11 @@ install-requirements:
 	@ python3 -m pip install -r ./requirements.txt
 
 migrate-database:
-	@ python album/manage.py makemigrations
-	@ python album/manage.py migrate
+	@ python3 manage.py makemigrations
+	@ python3 manage.py migrate
 
 run-tests:
-	@ cd ./album/ && python manage.py test
+	@ python3 manage.py test
 
 run-server:
-	@ python album/manage.py runserver
+	@ python3 manage.py runserver
