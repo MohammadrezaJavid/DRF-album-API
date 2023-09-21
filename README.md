@@ -7,6 +7,12 @@ $ git clone https://github.com/MohammadrezaJavid/DRF-album-API.git
 $ cd DRF-album-API
 ```
 
+***Config env file***
+```markdown
+First, create the env.py file similar to the example_env.py
+and define the appropriate values for the variables of this file.
+```
+
 ***Create a virtual environment***
 
 ```bash
