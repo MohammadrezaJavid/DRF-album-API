@@ -6,11 +6,11 @@ from rest_framework import generics
 
 
 class MyObtainTokenPairView(TokenObtainPairView):
-    permission_classes = (AllowAny,)  # دسترسی میده به تمام کاربرا چه وارد شده چه نشده
+    permission_classes = (AllowAny,)  # It gives access to all users whether they are logged in or not
     serializer_class = MyTokenObtainPairSerializer
 
 
 class RegisterView(generics.CreateAPIView):
-    queryset = User.objects.all().order_by('id')
     permission_classes = (AllowAny,)
+    queryset = User.objects.all().order_by('id')
     serializer_class = RegisterSerializer

@@ -4,13 +4,25 @@ from django.contrib.auth.models import User
 from rest_framework.validators import UniqueValidator
 from django.contrib.auth.password_validation import validate_password
 
+"""
+This class serializer for register user
+   by 
+    'username' 
+    'password' 'confirmPassword'
+    'email' 
+    'first_name' 
+    'last_name'
+"""
+
 
 class RegisterSerializer(serializers.ModelSerializer):
+    # email field is mandatory and unique
     email = serializers.EmailField(
         required=True,
         validators=[UniqueValidator(queryset=User.objects.all())]
     )
 
+    # password field is write only, mandatory
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
     confirmPassword = serializers.CharField(write_only=True, required=True)
 
@@ -43,10 +55,18 @@ class RegisterSerializer(serializers.ModelSerializer):
         return user
 
 
+"""
+This class serializer for create token(refresh and access)
+"""
+
+
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
 
     @classmethod
     def get_token(cls, user):
+        # token = super(MyTokenObtainPairSerializer, cls)
+        # token = token.get_token(user=user)
+
         token = super(MyTokenObtainPairSerializer, cls).get_token(user=user)
 
         # add username to token
