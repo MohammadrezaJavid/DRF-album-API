@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 from datetime import timedelta
-from ..env import Env
+from . import environment
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-an*^cnfc7=ucx@94g7cgp^sjw1nmv)50ng1f5#2@7)so11@4op'
@@ -97,11 +97,11 @@ SWAGGER_SETTINGS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': Env.NAME,
-        'USER': Env.USER,
-        'PASSWORD': Env.PASSWORD,
-        'HOST': Env.HOST,
-        'PORT': Env.PORT,
+        'NAME': environment.Env.NAME,
+        'USER': environment.Env.USER,
+        'PASSWORD': environment.Env.PASSWORD,
+        'HOST': environment.Env.HOST,
+        'PORT': environment.Env.PORT,
     },
 }
 
