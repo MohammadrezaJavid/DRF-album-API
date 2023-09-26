@@ -10,16 +10,13 @@ help:
 	@ echo '  help'
 
 create-venv:
-	@ python -m venv env
-	@ source ./env/bin/activate
-	@ python -m pip install --upgrade pip
+	@ python -m venv env && source ./env/bin/activate && python -m pip install --upgrade pip
 
 install-requirements:
 	@ python -m pip install -r ./requirements.txt
 
 migrate-database:
-	@ python manage.py makemigrations
-	@ python manage.py migrate
+	@ python manage.py makemigrations && python manage.py migrate
 
 run-tests:
 	@ python manage.py test
