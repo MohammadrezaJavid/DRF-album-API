@@ -1,7 +1,8 @@
-env
+environment.py
 note.txt
 .idea
 .pytest_cache
 *.jpg
 *.JPG
-env.py
+album/environment.py
+env
